@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractional Equity | Family Office & Investment Partners</title>
+    <meta name="description" content="Generational wealth management and fractional ownership opportunities provided by the Fractional Equity family office.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f4f6f8',
+                            100: '#e4e8ec',
+                            200: '#c5ced6',
+                            300: '#a6b3bf',
+                            400: '#6a7f91',
+                            500: '#2e4a64', // Primary Navy
+                            600: '#29435a',
+                            700: '#22384b',
+                            800: '#1c2e3d',
+                            900: '#172531',
+                        },
+                        accent: {
+                            500: '#c5a059', // Gold/Bronze for luxury feel
+                            600: '#b08d4b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .hero-pattern {
+            background-color: #172531;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231f3242' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-600 antialiased bg-brand-50">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-brand-500 rounded-sm flex items-center justify-center text-white">
+                        <span class="font-serif font-bold text-xl">F</span>
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-xl text-brand-900 tracking-tight block leading-none">Fractional</span>
+                        <span class="text-xs uppercase tracking-widest text-accent-500 font-semibold block leading-none mt-0.5">Equity</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-slate-600 hover:text-brand-500 font-medium transition-colors">Our Story</a>
+                    <a href="#approach" class="text-slate-600 hover:text-brand-500 font-medium transition-colors">Approach</a>
+                    <a href="#opportunities" class="text-slate-600 hover:text-brand-500 font-medium transition-colors">Opportunities</a>
+                    <a href="#contact" class="px-5 py-2.5 bg-brand-500 text-white font-medium rounded hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20">
+                        Partner With Us
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-slate-600 hover:text-brand-500 focus:outline-none p-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#about" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-slate-50 rounded-md">Our Story</a>
+                <a href="#approach" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-slate-50 rounded-md">Approach</a>
+                <a href="#opportunities" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-slate-50 rounded-md">Opportunities</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium text-accent-600 font-semibold">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-20 lg:pt-0 min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                alt="Modern building architecture" 
+                class="w-full h-full object-cover"
+            >
+            <div class="absolute inset-0 bg-brand-900/80 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-900 via-transparent to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-20">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6 animate-fade-in-up">
+                <span class="w-2 h-2 rounded-full bg-accent-500"></span>
+                <span class="text-xs font-semibold tracking-wider uppercase">Est. 2024 &bull; The Family Office</span>
+            </div>
+            
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
+                Shared Values.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-accent-200">Shared Prosperity.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-brand-100 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                We bridge the gap between institutional-grade assets and family stewardship. 
+                Experience the power of fractional ownership managed with integrity and long-term vision.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#opportunities" class="px-8 py-4 bg-accent-500 text-white font-semibold rounded hover:bg-accent-600 transition-all transform hover:-translate-y-1 shadow-lg shadow-accent-500/20">
+                    Explore Opportunities
+                </a>
+                <a href="#about" class="px-8 py-4 bg-transparent border border-white/30 text-white font-semibold rounded hover:bg-white/10 transition-all backdrop-blur-sm">
+                    Learn Our Philosophy
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white/50 animate-bounce hidden md:block">
+            <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </div>
+    </header>
+
+    <!-- Stats / Credibility Banner -->
+    <section class="bg-white border-b border-gray-100 relative z-20 -mt-8 mx-4 md:mx-auto max-w-5xl rounded-lg shadow-xl p-8 lg:p-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
+            <div class="p-4">
+                <div class="text-4xl font-serif font-bold text-brand-900 mb-2">100%</div>
+                <div class="text-sm font-medium text-slate-500 uppercase tracking-wide">Family Owned</div>
+            </div>
+            <div class="p-4">
+                <div class="text-4xl font-serif font-bold text-brand-900 mb-2">Curated</div>
+                <div class="text-sm font-medium text-slate-500 uppercase tracking-wide">High-Value Assets</div>
+            </div>
+            <div class="p-4">
+                <div class="text-4xl font-serif font-bold text-brand-900 mb-2">Transparent</div>
+                <div class="text-sm font-medium text-slate-500 uppercase tracking-wide">Fee Structure</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 lg:py-32 bg-brand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-accent-500/10 rounded-tl-3xl"></div>
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-brand-500/10 rounded-br-3xl"></div>
+                    <img 
+                        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80" 
+                        alt="Team meeting" 
+                        class="relative rounded-lg shadow-2xl w-full object-cover h-[500px]"
+                    >
+                    <div class="absolute bottom-8 left-8 bg-white p-6 rounded shadow-lg max-w-xs hidden md:block">
+                        <p class="font-serif text-xl italic text-brand-900 mb-2">"Business is personal when it's family."</p>
+                        <p class="text-sm text-slate-500 font-semibold">— The Founders</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="text-accent-600 font-semibold tracking-wide uppercase text-sm mb-2">About Fractional Equity</h2>
+                    <h3 class="font-serif text-4xl md:text-5xl font-bold text-brand-900 mb-6">More than an investment firm. A legacy builder.</h3>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        At Fractional Equity, we believe that the stability and growth potential of high-caliber assets shouldn't be reserved for the ultra-wealthy alone. Our family business was founded on a simple principle: <strong>integrity in partnership</strong>.
+                    </p>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        We leverage our collective experience to identify, acquire, and manage assets—ranging from real estate to private ventures—allowing our partners to own a fraction of the equity while enjoying the full benefits of ownership.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <div class="bg-brand-100 p-1 rounded-full text-brand-600 mt-1"><i data-lucide="check" class="w-4 h-4"></i></div>
+                            <span class="text-slate-700">Aligned interests: We invest alongside you.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="bg-brand-100 p-1 rounded-full text-brand-600 mt-1"><i data-lucide="check" class="w-4 h-4"></i></div>
+                            <span class="text-slate-700">Long-term horizon focus over short-term gains.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="bg-brand-100 p-1 rounded-full text-brand-600 mt-1"><i data-lucide="check" class="w-4 h-4"></i></div>
+                            <span class="text-slate-700">Hands-on management and transparent reporting.</span>
+                        </li>
+                    </ul>
+
+                    <a href="#contact" class="text-brand-600 font-semibold hover:text-brand-800 inline-flex items-center gap-2 group">
+                        Meet the family <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Approach -->
+    <section id="approach" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-accent-600 font-semibold tracking-wide uppercase text-sm mb-2">Our Approach</h2>
+                <h3 class="font-serif text-3xl md:text-4xl font-bold text-brand-900 mb-4">How We Create Value</h3>
+                <p class="text-slate-600">We simplify the complex world of alternative investments into a streamlined, transparent process.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group p-8 rounded-2xl bg-white border border-gray-100 hover:border-brand-100 hover:shadow-xl hover:shadow-brand-900/5 transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i data-lucide="pie-chart" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-brand-900 mb-3">Fractional Ownership</h4>
+                    <p class="text-slate-600 leading-relaxed">
+                        Access assets that typically require millions to acquire. We structure deals so you can purchase specific equity shares suited to your budget.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group p-8 rounded-2xl bg-white border border-gray-100 hover:border-brand-100 hover:shadow-xl hover:shadow-brand-900/5 transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i data-lucide="shield-check" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-brand-900 mb-3">Asset Management</h4>
+                    <p class="text-slate-600 leading-relaxed">
+                        We handle the headaches—maintenance, tenants, legal compliance, and financials—so your ownership experience is truly passive.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group p-8 rounded-2xl bg-white border border-gray-100 hover:border-brand-100 hover:shadow-xl hover:shadow-brand-900/5 transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i data-lucide="trending-up" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-brand-900 mb-3">Wealth Preservation</h4>
+                    <p class="text-slate-600 leading-relaxed">
+                        Our strategies focus on inflation-hedging and capital appreciation, protecting your family's financial future alongside ours.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Asset Class Preview -->
+    <section id="opportunities" class="py-20 lg:py-32 bg-brand-900 text-white relative overflow-hidden">
+        <!-- Decorative bg elements -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div class="max-w-xl">
+                    <h2 class="text-accent-500 font-semibold tracking-wide uppercase text-sm mb-2">Opportunities</h2>
+                    <h3 class="font-serif text-3xl md:text-4xl font-bold mb-4">Current Asset Focus</h3>
+                    <p class="text-brand-200">Our portfolio is diverse, yet selective. We only open opportunities that pass our rigorous family due diligence.</p>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <a href="#contact" class="inline-flex items-center gap-2 text-white border-b border-accent-500 pb-1 hover:text-accent-500 transition-colors">
+                        Request Portfolio Access <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="group relative rounded-lg overflow-hidden h-80 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Real Estate">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <div class="text-accent-500 text-xs font-bold uppercase tracking-wider mb-1">Real Estate</div>
+                        <h4 class="font-serif text-2xl font-bold mb-2">Luxury Residential</h4>
+                        <p class="text-sm text-gray-300 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                            Premium vacation homes and rentals in high-demand markets with proven yield potential.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative rounded-lg overflow-hidden h-80 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1744&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Commercial">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <div class="text-accent-500 text-xs font-bold uppercase tracking-wider mb-1">Commercial</div>
+                        <h4 class="font-serif text-2xl font-bold mb-2">Mixed-Use Development</h4>
+                        <p class="text-sm text-gray-300 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                            Stabilized commercial assets with long-term anchor tenants and value-add opportunities.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative rounded-lg overflow-hidden h-80 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Venture">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <div class="text-accent-500 text-xs font-bold uppercase tracking-wider mb-1">Private Equity</div>
+                        <h4 class="font-serif text-2xl font-bold mb-2">Small Business Growth</h4>
+                        <p class="text-sm text-gray-300 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                            Investing in cash-flowing family businesses looking for succession planning or expansion capital.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact -->
+    <section id="contact" class="py-20 lg:py-32 bg-brand-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="grid md:grid-cols-5">
+                    <div class="col-span-2 bg-brand-800 text-white p-10 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold mb-4">Let's Talk</h3>
+                            <p class="text-brand-200 text-sm mb-8">
+                                Interested in learning more about our current offerings or discussing a partnership? We'd love to hear from you.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-3 text-sm">
+                                    <i data-lucide="mail" class="w-4 h-4 text-accent-500"></i>
+                                    <span>hello@fractionalequity.co</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-sm">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-accent-500"></i>
+                                    <span>New York, NY</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                                <span class="font-serif font-bold text-xl">F</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-span-3 p-10">
+                        <form onsubmit="event.preventDefault(); alert('Thank you for your interest. We will be in touch shortly.');" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                                <input type="text" class="w-full px-4 py-2 border border-gray-200 rounded focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
+                                <input type="email" class="w-full px-4 py-2 border border-gray-200 rounded focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all" placeholder="john@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Message</label>
+                                <textarea rows="4" class="w-full px-4 py-2 border border-gray-200 rounded focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all" placeholder="Tell us about your investment goals..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3 bg-brand-500 text-white font-semibold rounded hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-white py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="font-serif font-bold text-xl tracking-tight">Fractional<span class="text-accent-500">Equity</span></span>
+                    <p class="text-brand-400 text-sm mt-2">Family values. Institutional expertise.</p>
+                </div>
+                <div class="flex flex-col md:flex-row gap-6 md:gap-12 text-sm text-brand-300">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition-colors">Investor Portal</a>
+                </div>
+            </div>
+            <div class="border-t border-white/5 mt-8 pt-8 text-center text-xs text-brand-500">
+                &copy; 2024 Fractional Equity. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
