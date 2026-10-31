@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fractional Equity</title>
-    <meta name="description" content="Fractional Equity is a private family office.">
+    <meta name="description" content="Private family office. We do not solicit or accept outside capital or clients.">
+    <meta name="robots" content="noindex, nofollow">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -54,44 +55,17 @@
         <div class="w-full max-w-md text-center">
             <h1 class="font-serif text-4xl sm:text-5xl font-semibold text-brand-900 tracking-tight">Fractional Equity</h1>
             <div class="w-12 h-px bg-accent-500 mx-auto my-6"></div>
-            <p class="text-brand-500 font-light text-lg">Fractional Equity is a private family office.</p>
+            <p class="text-brand-500 font-light text-lg">Private family office. We do not solicit or accept outside capital or clients.</p>
 
-            <div class="mt-12 text-left bg-white border border-brand-100 rounded-lg shadow-sm p-6 sm:p-8">
-                <h2 class="font-serif text-xl text-brand-900 text-center">Contact</h2>
-                <p class="mt-3 text-center text-sm">
+            <div class="mt-12 text-center bg-white border border-brand-100 rounded-lg shadow-sm p-6 sm:p-8">
+                <h2 class="font-serif text-xl text-brand-900">Contact</h2>
+                <p class="mt-3 text-sm text-brand-600">For existing relationships and vendors only.</p>
+                <p class="mt-2 text-sm">
                     <a href="mailto:hello@fractionalequity.com" class="inline-flex items-center gap-2 text-brand-500 hover:text-accent-600 transition-colors">
                         <i data-lucide="mail" class="w-4 h-4"></i>
                         hello@fractionalequity.com
                     </a>
                 </p>
-
-                <form id="contact-form" class="mt-6 space-y-4" novalidate>
-                    <div>
-                        <label for="name" class="block text-xs font-medium text-brand-600 mb-1">Name</label>
-                        <input id="name" name="name" type="text" required autocomplete="name"
-                               class="w-full rounded-md border border-brand-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-xs font-medium text-brand-600 mb-1">Email</label>
-                        <input id="email" name="email" type="email" required autocomplete="email"
-                               class="w-full rounded-md border border-brand-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500">
-                    </div>
-                    <div>
-                        <label for="message" class="block text-xs font-medium text-brand-600 mb-1">Message</label>
-                        <textarea id="message" name="message" rows="4" required
-                                  class="w-full rounded-md border border-brand-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500"></textarea>
-                    </div>
-                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
-                    <button id="submit-btn" type="submit"
-                            class="w-full rounded-md bg-brand-500 hover:bg-brand-600 text-white text-sm font-medium py-2.5 transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
-                        Send message
-                    </button>
-                    <p id="form-success" class="hidden text-sm text-green-700 text-center" role="status">Thank you. Your message has been sent.</p>
-                    <p id="form-error" class="hidden text-sm text-red-700 text-center" role="alert">
-                        Sorry, your message could not be sent.
-                        <a id="mailto-fallback" href="mailto:hello@fractionalequity.com" class="underline">Email us instead</a>.
-                    </p>
-                </form>
             </div>
         </div>
     </main>
@@ -101,46 +75,7 @@
     </footer>
 
     <script>
-        // TODO(formspree): replace with real form ID
-        const FORMSPREE_ENDPOINT = 'https://formspree.io/f/TODO_FORM_ID';
-        const CONTACT_EMAIL = 'hello@fractionalequity.com';
-
         lucide.createIcons();
-
-        const form = document.getElementById('contact-form');
-        const btn = document.getElementById('submit-btn');
-        const okMsg = document.getElementById('form-success');
-        const errMsg = document.getElementById('form-error');
-        const fallback = document.getElementById('mailto-fallback');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            okMsg.classList.add('hidden');
-            errMsg.classList.add('hidden');
-            if (!form.checkValidity()) { form.reportValidity(); return; }
-
-            const label = btn.textContent;
-            btn.disabled = true;
-            btn.textContent = 'Sending…';
-            try {
-                const response = await fetch(FORMSPREE_ENDPOINT, {
-                    method: 'POST',
-                    body: new FormData(form),
-                    headers: { Accept: 'application/json' }
-                });
-                if (!response.ok) throw new Error('HTTP ' + response.status);
-                form.reset();
-                okMsg.classList.remove('hidden');
-            } catch (err) {
-                const d = new FormData(form);
-                const body = 'Name: ' + (d.get('name') || '') + '\nEmail: ' + (d.get('email') || '') + '\n\n' + (d.get('message') || '');
-                fallback.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('Message from fractionalequity.com') + '&body=' + encodeURIComponent(body);
-                errMsg.classList.remove('hidden');
-            } finally {
-                btn.disabled = false;
-                btn.textContent = label;
-            }
-        });
     </script>
 </body>
 </html>
